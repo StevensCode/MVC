@@ -1,29 +1,22 @@
 <?php
-//view 
+
 namespace views;
 
 use controllers\CalcController;
+use models\CalcModel;
 
 class CalcView
 {
     private $model;
-    private $controller;
 
-    public function __construct($controller, $model)
+    public function __construct(CalcModel $model)
     {
-        $this->controller = $controller;
         $this->model = $model;
     }
 
-    //output is handling model functions currently
     public function output()
     {
-        $answer = $this->model->calculate();
-        $answer = $this->model->getAnswer();
-        
-        return 
-<<<_END
-<form method="post" action="index.php">
+        $output = '<form method="post" action="index.php?action=calculate">
     <input name="operator1" type="text"><br>
     <select name="operand">
         <option value="+">+</option>
@@ -34,8 +27,7 @@ class CalcView
     <input name="operator2" type="text"><br>
     <input type="submit" value="Calculate">
 </form>
-<div class="answer">$answer</div>
-_END;
-
+<div class="answer">'. $this->model->answer . '</div>';
+        return $output;
     }
 }
