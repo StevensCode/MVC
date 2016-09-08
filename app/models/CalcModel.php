@@ -15,9 +15,9 @@ class CalcModel
     {
         $this->operator1 = $operator1;
         $this->operator1 = $operator2;
-        $this->operand = $operand;
+        $this->operand   = $operand;
     }
-
+    //each operand function separated
     public function Add()
     {
         $this->answer = $this->operator1 + $this->operator2;
@@ -40,6 +40,7 @@ class CalcModel
 
     public function getAnswer()
     {
+        if($this->answer == 0)return $this->answer = "It isn't possible to divide by 0";
         return round($this->answer, 3, PHP_ROUND_HALF_UP);
     }
 }

@@ -9,7 +9,7 @@
 <body>
 <h1>MVC - Calculator</h1>
 <?php
-/*
+
 //require model, view, and control files
 require '../app/models/CalcModel.php';
 require '../app/views/CalcView.php';
@@ -20,36 +20,20 @@ use models\CalcModel;
 use controllers\CalcController;
 use views\CalcView;
 
-//new Model
+//model object
 $model = new CalcModel();
-
-//TODO make me useful
-//$controller = new CalcController($model);
-
-//new View
-$view = new CalcView($controller, $model);
-
-//echo view for form
-echo $view->output();
-*/
-//require model, view, and control files
-require '../app/models/CalcModel.php';
-require '../app/views/CalcView.php';
-require '../app/controllers/CalcController.php';
-
-//namsepaces to use Classes
-use models\CalcModel;
-use controllers\CalcController;
-use views\CalcView;
-
-$model = new CalcModel();
-
+//controller object must use model
 $controller = new CalcController($model);
-
+//view object also uses model
 $view = new CalcView($model);
 
-if (isset($_GET['action'])) $controller->{$_GET['action']}();
+//$_GET action from url
+if (isset($_GET['action'])) 
+    {
+        $controller->{$_GET['action']}();
+    }
 
+//display view
 echo $view->output();
 ?>
 
