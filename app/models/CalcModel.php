@@ -13,17 +13,17 @@ class CalcModel
     /**
      * @var string
      */
-    public $operator1;
+    public $operand1;
 
     /**
      * @var string
      */
-    public $operator2;
+    public $operand2;
 
     /**
      * @var string
      */
-    public $operand;
+    public $operator;
 
     /**
      * @var string
@@ -35,9 +35,9 @@ class CalcModel
      */
     public function __construct(array $math = [])
     {
-        $this->operator1 = $operator1;
-        $this->operator2 = $operator2;
-        $this->operand   = $operand;
+        $this->operand1 = $operand1;
+        $this->operand2 = $operand2;
+        $this->operator   = $operator;
         $this->answer    = $answer;
     }
     
@@ -46,7 +46,7 @@ class CalcModel
      */
     public function Add()
     {
-        return $this->getAnswer($this->answer = $this->operator1 + $this->operator2);
+        return $this->getAnswer($this->answer = $this->operand1 + $this->operand2);
     }
 
     /**
@@ -54,7 +54,7 @@ class CalcModel
      */
     public function Subtract()
     {
-        return $this->getAnswer($this->answer = $this->operator1 - $this->operator2);
+        return $this->getAnswer($this->answer = $this->operand1 - $this->operand2);
     }
 
     /**
@@ -62,8 +62,8 @@ class CalcModel
      */
     public function Divide()
     {
-        if($this->operator2 == 0)return $this->answer = "It isn't possible to divide by 0";
-        return $this->getAnswer($this->answer = $this->operator1 / $this->operator2);
+        if($this->operand2 == 0)return $this->answer = "It isn't possible to divide by 0";
+        return $this->getAnswer($this->answer = $this->operand1 / $this->operand2);
     }
 
     /**
@@ -71,7 +71,7 @@ class CalcModel
      */
     public function Multiply()
     {
-        return $this->getAnswer($this->answer = $this->operator1 * $this->operator2);
+        return $this->getAnswer($this->answer = $this->operand1 * $this->operand2);
     }
 
     /**
