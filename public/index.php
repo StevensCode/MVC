@@ -11,17 +11,17 @@
 <?php
 
 //require model, view, and control files
-require '../app/models/CalcModel.php';
+require '../app/models/calc.php';
 require '../app/views/CalcView.php';
 require '../app/controllers/CalcController.php';
 
 //namsepaces to use Classes
-use models\CalcModel;
-use controllers\CalcController;
-use views\CalcView;
+use calculator\models\Calc;
+use calculator\controllers\CalcController;
+use calculator\views\CalcView;
 
 //model object
-$model = new CalcModel();
+$model = new Calc();
 //controller object must use model
 $controller = new CalcController($model);
 //view object also uses model

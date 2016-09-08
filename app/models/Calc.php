@@ -1,10 +1,10 @@
 <?php
 
-namespace models;
+namespace calculator\models;
 
-use controllers\CalcController;
+use calculator\controllers\CalcController;
 
-class CalcModel
+class Calc
 {
     public $operator1;
     public $operator2;
