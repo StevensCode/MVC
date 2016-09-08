@@ -1,46 +1,84 @@
 <?php
-
+/**
+* Calculator using MVC.
+* Project to learn and study Model View Controller
+* in PHP with Slim Framework
+*/
 namespace models;
 
 use controllers\CalcController;
 
 class CalcModel
 {
+    /**
+     * @var string
+     */
     public $operator1;
+
+    /**
+     * @var string
+     */
     public $operator2;
+
+    /**
+     * @var string
+     */
     public $operand;
+
+    /**
+     * @var string
+     */
     public $answer;
 
-    public function __construct()
+    /**
+     * @param array
+     */
+    public function __construct(array $math = [])
     {
         $this->operator1 = $operator1;
-        $this->operator1 = $operator2;
+        $this->operator2 = $operator2;
         $this->operand   = $operand;
+        $this->answer    = $answer;
     }
-    //each operand function separated
+    
+    /**
+     * @return string
+     */
     public function Add()
     {
-        $this->answer = $this->operator1 + $this->operator2;
+        return $this->getAnswer($this->answer = $this->operator1 + $this->operator2);
     }
 
+    /**
+     * @return string
+     */
     public function Subtract()
     {
-        $this->answer = $this->operator1 - $this->operator2;
+        return $this->getAnswer($this->answer = $this->operator1 - $this->operator2);
     }
 
+    /**
+     * @return string
+     */
     public function Divide()
     {
-        $this->answer = $this->operator1 / $this->operator2;
+        if($this->operator2 == 0)return $this->answer = "It isn't possible to divide by 0";
+        return $this->getAnswer($this->answer = $this->operator1 / $this->operator2);
     }
 
+    /**
+     * @return string
+     */
     public function Multiply()
     {
-        $this->answer = $this->operator1 * $this->operator2;
+        return $this->getAnswer($this->answer = $this->operator1 * $this->operator2);
     }
 
-    public function getAnswer()
+    /**
+     * @return string
+     */
+    private function getAnswer($answer)
     {
-        if($this->answer == 0)return $this->answer = "It isn't possible to divide by 0";
-        return round($this->answer, 3, PHP_ROUND_HALF_UP);
+        return round($answer, 3, PHP_ROUND_HALF_UP);
     }
 }
