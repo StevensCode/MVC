@@ -23,7 +23,7 @@ class CalcModel
     /**
      * @var string
      */
-    public $operator;
+    //public $operator;
 
     /**
      * @var string
@@ -37,8 +37,8 @@ class CalcModel
     {
         $this->operand1 = $operand1;
         $this->operand2 = $operand2;
-        $this->operator   = $operator;
-        $this->answer    = $answer;
+        //$this->operator = $operator;
+        $this->answer   = $answer;
     }
     
     /**
@@ -75,10 +75,12 @@ class CalcModel
     }
 
     /**
+     * @param $answer
      * @return string
      */
     private function getAnswer($answer)
     {
-        return round($answer, 3, PHP_ROUND_HALF_UP);
+        $this->answer = round($answer, 3, PHP_ROUND_HALF_UP);
+        //return $answer;
     }
 }

@@ -30,7 +30,7 @@ class CalcController
     {
         $this->model->operand1 = $_POST['operand1'];
         $this->model->operand2 = $_POST['operand2'];
-        $this->model->operator   = $_POST['operator'];
+        $this->model->operator = $_POST['operator'];
 
         switch($this->model->operator)
         {
