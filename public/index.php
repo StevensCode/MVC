@@ -9,31 +9,31 @@
 <body>
 <h1>MVC - Calculator</h1>
 <?php
+/**
+* Calculator using MVC.
+* Project to learn and study Model View Controller
+* in PHP with Slim Framework
+*/
 
-//require model, view, and control files
 require '../app/models/CalcModel.php';
 require '../app/views/CalcView.php';
 require '../app/controllers/CalcController.php';
 
-//namsepaces to use Classes
 use models\CalcModel;
 use controllers\CalcController;
 use views\CalcView;
 
-//model object
 $model = new CalcModel();
-//controller object must use model
+
 $controller = new CalcController($model);
-//view object also uses model
+
 $view = new CalcView($model);
 
-//$_GET action from url
 if (isset($_GET['action'])) 
     {
         $controller->{$_GET['action']}();
     }
 
-//display view
 echo $view->output();
 ?>
 
