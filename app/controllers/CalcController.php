@@ -1,14 +1,14 @@
 <?php
 
-namespace controllers;
+namespace calculator\controllers;
 
-use models\CalcModel;
+use calculator\models\calc;
 
 class CalcController
 {
     private $model;
 
-    public function __construct(CalcModel $model)
+    public function __construct(Calc $model)
     {
         $this->model = $model;
     }

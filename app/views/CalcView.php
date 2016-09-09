@@ -1,15 +1,15 @@
 <?php
 
-namespace views;
+namespace calculator\views;
 
-use controllers\CalcController;
-use models\CalcModel;
+use calculator\controllers\CalcController;
+use calculator\models\Calc;
 
 class CalcView
 {
     private $model;
 
-    public function __construct(CalcModel $model)
+    public function __construct(Calc $model)
     {
         $this->model = $model;
     }
