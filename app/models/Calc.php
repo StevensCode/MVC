@@ -1,46 +1,86 @@
 <?php
-
+/**
+* Calculator using MVC.
+* Project to learn and study Model View Controller
+* in PHP with Slim Framework
+*/
 namespace calculator\models;
 
 use calculator\controllers\CalcController;
 
 class Calc
 {
-    public $operator1;
-    public $operator2;
-    public $operand;
+    /**
+     * @var string
+     */
+    public $operand1;
+
+    /**
+     * @var string
+     */
+    public $operand2;
+
+    /**
+     * @var string
+     */
+    //public $operator;
+
+    /**
+     * @var string
+     */
     public $answer;
 
-    public function __construct()
+    /**
+     * @param array
+     */
+    public function __construct(array $math = [])
     {
-        $this->operator1 = $operator1;
-        $this->operator1 = $operator2;
-        $this->operand   = $operand;
+        $this->operand1 = $operand1;
+        $this->operand2 = $operand2;
+        //$this->operator = $operator;
+        $this->answer   = $answer;
     }
-    //each operand function separated
+    
+    /**
+     * @return string
+     */
     public function Add()
     {
-        $this->answer = $this->operator1 + $this->operator2;
+        return $this->getAnswer($this->answer = $this->operand1 + $this->operand2);
     }
 
+    /**
+     * @return string
+     */
     public function Subtract()
     {
-        $this->answer = $this->operator1 - $this->operator2;
+        return $this->getAnswer($this->answer = $this->operand1 - $this->operand2);
     }
 
+    /**
+     * @return string
+     */
     public function Divide()
     {
-        $this->answer = $this->operator1 / $this->operator2;
+        if($this->operand2 == 0)return $this->answer = "It isn't possible to divide by 0";
+        return $this->getAnswer($this->answer = $this->operand1 / $this->operand2);
     }
 
+    /**
+     * @return string
+     */
     public function Multiply()
     {
-        $this->answer = $this->operator1 * $this->operator2;
+        return $this->getAnswer($this->answer = $this->operand1 * $this->operand2);
     }
 
-    public function getAnswer()
+    /**
+     * @param $answer
+     * @return string
+     */
+    private function getAnswer($answer)
     {
-        if($this->answer == 0)return $this->answer = "It isn't possible to divide by 0";
-        return round($this->answer, 3, PHP_ROUND_HALF_UP);
+        $this->answer = round($answer, 3, PHP_ROUND_HALF_UP);
+        //return $answer;
     }
 }

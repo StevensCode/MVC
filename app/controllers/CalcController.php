@@ -1,25 +1,38 @@
 <?php
-
+/**
+* Calculator using MVC.
+* Project to learn and study Model View Controller
+* in PHP with Slim Framework
+*/
 namespace calculator\controllers;
 
 use calculator\models\calc;
 
 class CalcController
 {
+    /**
+     * @var Calculator
+     */
     private $model;
 
+    /**
+     * @param Calculator $model
+     */
     public function __construct(Calc $model)
     {
         $this->model = $model;
     }
 
+    /**
+     * @return calculate
+     */
     public function calculate()
     {
-        $this->model->operator1 = $_POST['operator1'];
-        $this->model->operator2 = $_POST['operator2'];
-        $this->model->operand   = $_POST['operand'];
+        $this->model->operand1 = $_POST['operand1'];
+        $this->model->operand2 = $_POST['operand2'];
+        $this->model->operator = $_POST['operator'];
 
-        switch($this->model->operand)
+        switch($this->model->operator)
         {
             case '+':
                 $this->model->Add();
@@ -28,10 +41,6 @@ class CalcController
                 $this->model->Subtract();
                 break;
             case '/':
-                if($this->model->operator2 == 0)
-                {
-                    break;
-                }
                 $this->model->Divide();
                 break;
             case '*':
