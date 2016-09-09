@@ -1,0 +1,9 @@
+#ignore unnecessary directories
+/vendor/
+
+#ignore hidden files
+.DS_Store
+
+#other files
+composer.phar
+

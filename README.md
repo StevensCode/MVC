@@ -1,6 +1,6 @@
-Starter for MVC Calculator.
+# Starter for MVC Calculator.
 
-For use:
+## For use:
 
 1. open your CLI
 2. change directory to public folder

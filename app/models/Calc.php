@@ -4,11 +4,11 @@
 * Project to learn and study Model View Controller
 * in PHP with Slim Framework
 */
-namespace models;
+namespace calculator\models;
 
-use controllers\CalcController;
+use calculator\controllers\CalcController;
 
-class CalcModel
+class Calc
 {
     /**
      * @var string

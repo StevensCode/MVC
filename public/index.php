@@ -14,16 +14,15 @@
 * Project to learn and study Model View Controller
 * in PHP with Slim Framework
 */
-
-require '../app/models/CalcModel.php';
+require '../app/models/calc.php';
 require '../app/views/CalcView.php';
 require '../app/controllers/CalcController.php';
 
-use models\CalcModel;
-use controllers\CalcController;
-use views\CalcView;
+use calculator\models\Calc;
+use calculator\controllers\CalcController;
+use calculator\views\CalcView;
 
-$model = new CalcModel();
+$model = new Calc();
 
 $controller = new CalcController($model);
 

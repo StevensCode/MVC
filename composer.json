@@ -1,0 +1,20 @@
+{
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "http://composer/"
+        }
+    ],
+
+    "autoload": {
+        "psr-4": {"QL\\RMMyQLOutage\\": "src"}
+    },
+    "require": {
+        "twig/twig": "~1.0"
+    },
+
+    "require-dev": {
+        
+    }
+
+}

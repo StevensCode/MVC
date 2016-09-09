@@ -4,10 +4,10 @@
 * Project to learn and study Model View Controller
 * in PHP with Slim Framework
 */
-namespace views;
+namespace calculator\views;
 
-use controllers\CalcController;
-use models\CalcModel;
+use calculator\controllers\CalcController;
+use calculator\models\Calc;
 
 class CalcView
 {
@@ -19,7 +19,7 @@ class CalcView
     /**
      * @param Calculator $model
      */
-    public function __construct(CalcModel $model)
+    public function __construct(Calc $model)
     {
         $this->model = $model;
     }
