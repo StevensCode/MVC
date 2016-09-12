@@ -29,7 +29,7 @@ class CalcView
      */
     public function output()
     {
-        $output = '<form method="post" action="index.php?action=calculate">
+        $output = '<form method="post" action="?action=calculate">
     <input name="operand1" type="text">
     <select name="operator" size="4">
         <option value="+" selected="selected">+</option>
