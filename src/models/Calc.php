@@ -11,22 +11,22 @@ use calculator\controllers\CalcController;
 class Calc
 {
     /**
-     * @var string
+     * @var float
      */
     public $operand1;
 
     /**
-     * @var string
+     * @var float
      */
     public $operand2;
 
     /**
-     * @var string
+     * @var char
      */
-    //public $operator;
+    public $operator;
 
     /**
-     * @var string
+     * @var float
      */
     public $answer;
 
@@ -37,12 +37,12 @@ class Calc
     {
         $this->operand1 = $operand1;
         $this->operand2 = $operand2;
-        //$this->operator = $operator;
+        $this->operator = $operator;
         $this->answer   = $answer;
     }
     
     /**
-     * @return string
+     * @return float
      */
     public function Add()
     {
@@ -50,7 +50,7 @@ class Calc
     }
 
     /**
-     * @return string
+     * @return float
      */
     public function Subtract()
     {
@@ -58,7 +58,7 @@ class Calc
     }
 
     /**
-     * @return string
+     * @return mixed
      */
     public function Divide()
     {
@@ -67,7 +67,7 @@ class Calc
     }
 
     /**
-     * @return string
+     * @return float
      */
     public function Multiply()
     {
@@ -76,11 +76,11 @@ class Calc
 
     /**
      * @param $answer
-     * @return string
+     * @return mixed
      */
     private function getAnswer($answer)
     {
         $this->answer = round($answer, 3, PHP_ROUND_HALF_UP);
-        //return $answer;
+        return $answer;
     }
 }

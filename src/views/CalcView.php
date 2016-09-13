@@ -30,14 +30,14 @@ class CalcView
     public function output()
     {
         $output = '<form method="post" action="?action=calculate">
-    <input name="operand1" type="text">
+    <input name="operand1" type="float">
     <select name="operator" size="4">
         <option value="+" selected="selected">+</option>
         <option value="-">-</option>
         <option value="/">/</option>
         <option value="*">*</option>
     </select>
-    <input name="operand2" type="text"><br>
+    <input name="operand2" type="float"><br>
     <input type="submit" value="Calculate">
 </form>
 <div class="answer">'. $this->model->answer . '</div>';
