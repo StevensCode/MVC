@@ -9,11 +9,7 @@ use \Psr\Http\Message\ResponseInterface as Response;
 
 require '../vendor/autoload.php';
 
-$config['displayErrorDetails'] = true;
-$config['addContentLengthHeader'] = false;
-
-
-$app = new \Slim\App(["settings" => $config]);
+$app = new \Slim\App;
 
 $container = $app->getContainer();
 $container['view'] = new \Slim\Views\PhpRenderer("../templates/");
