@@ -33,7 +33,7 @@ class Calc
     /**
      * @param array
      */
-    public function __construct(array $math = [])
+    public function __construct()
     {
         $this->operand1 = $operand1;
         $this->operand2 = $operand2;

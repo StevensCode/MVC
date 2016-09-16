@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8"/>
-        <title>Simple Calculator - MVC</title>
-        <link href='//fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
-        <link href='../public/css/style.css' rel='stylesheet' type='text/css'>
-    </head>
-<body>
-<h1>MVC - Calculator</h1>
 <?php
 /**
 * Calculator using MVC.
@@ -34,7 +24,3 @@ if (isset($_GET['action']))
     }
 
 echo $view->output();
-?>
-
-</body>
-</html>
