@@ -8,9 +8,9 @@ require '../src/models/calc.php';
 require '../src/views/CalcView.php';
 require '../src/controllers/CalcController.php';
 
-use calculator\models\Calc;
-use calculator\controllers\CalcController;
-use calculator\views\CalcView;
+use QL\CJarvis\MVC\models\Calc;
+use QL\CJarvis\MVC\controllers\CalcController;
+use QL\CJarvis\MVC\views\CalcView;
 
 $model = new Calc();
 

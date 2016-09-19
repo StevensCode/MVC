@@ -3,7 +3,7 @@
 {% block title %}Hello World{% endblock %}
 
 {% block body %}
-                    <form method="post" action="{{ calculate }}">
+                    <form method="post" action="">
                     <input name="operand1" type="float">
                     <select name="operator" size="4">
                         <option value="+" selected="selected">+</option>
@@ -13,6 +13,6 @@
                     </select>
                     <input name="operand2" type="float"><br>
                     <input type="submit" value="Calculate">
-                    </form>               
-                    <div class="answer">{{ answer }}</div>
+                    </form>
+                    <div class="answer" name="answer"></div>
 {% endblock %}
