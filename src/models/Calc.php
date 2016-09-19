@@ -4,9 +4,9 @@
 * Project to learn and study Model View Controller
 * in PHP with Slim Framework
 */
-namespace calculator\models;
+namespace QL\CJarvis\MVC\models;
 
-use calculator\controllers\CalcController;
+use QL\CJarvis\MVC\controllers\CalcController;
 
 class Calc
 {
@@ -33,20 +33,20 @@ class Calc
     /**
      * @param array
      */
-    public function __construct(array $math = [])
+    public function __construct($operand1, $operand2, $operator)
     {
         $this->operand1 = $operand1;
         $this->operand2 = $operand2;
         $this->operator = $operator;
-        $this->answer   = $answer;
+        //$this->answer   = $answer;
     }
     
     /**
      * @return float
      */
-    public function Add()
+    public function Add($operand1, $operand2)
     {
-        return $this->getAnswer($this->answer = $this->operand1 + $this->operand2);
+        return $this->getAnswer($answer = $operand1 + $operand2);
     }
 
     /**

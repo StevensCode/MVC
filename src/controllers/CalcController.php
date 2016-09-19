@@ -4,9 +4,10 @@
 * Project to learn and study Model View Controller
 * in PHP with Slim Framework
 */
-namespace calculator\controllers;
+namespace QL\CJarvis\MVC\controllers;
 
-use calculator\models\calc;
+use QL\CJarvis\MVC\models\Calc;
+use QL\CJarvis\MVC\CalcView;
 
 class CalcController
 {
@@ -28,14 +29,14 @@ class CalcController
      */
     public function calculate()
     {
-        $this->model->operand1 = $_POST['operand1'];
-        $this->model->operand2 = $_POST['operand2'];
-        $this->model->operator = $_POST['operator'];
+        $operand1 = $_POST['operand1'];
+        $operand2 = $_POST['operand2'];
+        $operator = $_POST['operator'];
 
-        switch($this->model->operator)
+        switch($operator)
         {
             case '+':
-                $this->model->Add();
+                $this->model->Add($operand1, $operand2);
                 break;
             case '-':
                 $this->model->Subtract();
