@@ -1,0 +1,5 @@
+cal.math.get:
+    url: '/'
+    controller: 'QL\CJarvis\MVC\Controllers\Calc\Get'
+    view: 'calculate.twig'
+    method: 'GET'
