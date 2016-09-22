@@ -21,7 +21,7 @@ class Calc
     public $operand2;
 
     /**
-     * @var char
+     * @var string
      */
     public $operator;
 

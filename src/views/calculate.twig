@@ -1,18 +1,18 @@
 {% extends "index.twig" %}
 
-{% block title %}Hello World{% endblock %}
+{% block title %}Calculator App{% endblock %}
 
 {% block body %}
-                    <form method="post" action="">
-                    <input name="operand1" type="float">
-                    <select name="operator" size="4">
-                        <option value="+" selected="selected">+</option>
-                        <option value="-">-</option>
-                        <option value="/">/</option>
-                        <option value="*">*</option>
-                    </select>
-                    <input name="operand2" type="float"><br>
-                    <input type="submit" value="Calculate">
-                    </form>
-                    <div class="answer" name="answer">{{ RESULT}}</div>
+    <form method="post" action="">
+        <input name="operand1" type="float">
+        <select name="operator" size="4">
+            <option value="+" selected="selected">+</option>
+            <option value="-">-</option>
+            <option value="/">/</option>
+            <option value="*">*</option>
+        </select>
+        <input name="operand2" type="float"><br>
+        <input type="submit" value="Calculate">
+    </form>
+    <div class="answer" name="answer">{{ RESULT }}</div>
 {% endblock %}

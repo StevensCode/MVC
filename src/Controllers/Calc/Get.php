@@ -6,14 +6,16 @@
 */
 namespace QL\CJarvis\MVC\Controllers\Calc;
 
-use QL\CJarvis\MVC\libs\ControllerInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Message\ResponseInterface;
+use QL\CJarvis\MVC\libs\ControllerInterface;
 
 class Get implements ControllerInterface
 {
     /**
-     * @return calculate
+     * @param ServerRequestInterface $request
+     * @param ResponseInterface $response
+     * @return array
      */
     public function __invoke(ServerRequestInterface $request, ResponseInterface $response)
     {

@@ -10,6 +10,7 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Slim\App;
 use Slim\Views\Twig;
+use Slim\Views\TwigExtension;
 use Symfony\Component\Yaml\Yaml;
 
 class Bootstrap
@@ -55,7 +56,7 @@ class Bootstrap
 
         $container['view'] = function ($container) use ($templatePath) {
             $view = new Twig($templatePath);
-            $view->addExtension(new \Slim\Views\TwigExtension(
+            $view->addExtension(new TwigExtension(
                 $container['router'],
                 $container['request']->getUri()
             ));

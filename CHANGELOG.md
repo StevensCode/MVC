@@ -1,9 +1,17 @@
 # CHANGELOG
 
+## 22-09-2016
+
+* Made all files that use `Psr\Http\Message\ServerRequestInterface` and `ResponseInterface` more DRY
+* Moved calculations to model file `Calc.php`
+* Changed calculation functions to private
+* Added appropriate docblock descriptions
+* Linked `RESULT` to .twig view
+
 ## 21-09-2016
 
-* Added Bootstrap.php file to simplify index.php
-* Added routes.yml file for routing app
+* Added `Bootstrap.php` file to simplify `index.php`
+* Added `routes.yml` file for routing app
 * Changed way Post/Model handle logic
 
 ## 19-09-2016
