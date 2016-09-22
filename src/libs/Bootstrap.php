@@ -6,8 +6,8 @@
 */
 namespace QL\CJarvis\MVC\libs;
 
-use Psr\Http\Message\ResponseInterface as Response;
-use Psr\Http\Message\ServerRequestInterface as Request;
+use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\ServerRequestInterface;
 use Slim\App;
 use Slim\Views\Twig;
 use Symfony\Component\Yaml\Yaml;
@@ -77,17 +77,16 @@ class Bootstrap
         $routesInfo = Yaml::parse(file_get_contents(self::ROOT.'/configuration/routes.yml'));
 
         foreach ($routesInfo as $key => $val) {
-            $method = strtolower($val['method']);
+            $method = $val['method'];
             $controller = $val['controller'];
             $view = $val['view'];
             $app->$method(
-                    $val['url'],
-                    function (Request $request, Response $response) use ($controller, $view) {
-                        $response = call_user_func(new $controller, $request, $response);
-                        $response = $this->view->render($response, $view);
-                        return $response;
-                    }
-            );          
+                $val['url'],
+                function (ServerRequestInterface $request, ResponseInterface $response) use ($controller, $view) {
+                    $result = call_user_func(new $controller, $request, $response);
+                    return $this->view->render($response, $view, $result);
+                }
+            );
         }
     }
 }

@@ -26,52 +26,80 @@ class Calc
     public $operator;
 
     /**
-     * @var float
+     * @param float $operand1
+     * @param float $operand2
+     * @param string $operator
      */
-    public $answer;
-
-    /**
-     * @param array
-     */
-    public function __construct($operand1, $operand2, $operator, $answer = 0)
+    public function __construct($operand1, $operand2, $operator)
     {
         $this->operand1 = $operand1;
         $this->operand2 = $operand2;
         $this->operator = $operator;
-        $this->answer   = $answer;
-    }
-    
-    /**
-     * @return float
-     */
-    public function Add($operand1, $operand2)
-    {
-        return $this->getAnswer($answer = $operand1 + $operand2);
     }
 
     /**
-     * @return float
+     * @param null
+     * @return string $result
      */
-    public function Subtract($operand1, $operand2)
+    public function calculate()
     {
-        return $this->getAnswer($answer = $operand1 - $operand2);
+        switch ($this->operator) {
+            case '+':
+                return $this->Add($this->operand1, $this->operand2);
+            case '-':
+                return $this->Subtract($this->operand1, $this->operand2);
+            case '/':
+                return $this->Divide($this->operand1, $this->operand2);
+            case '*':
+                return $this->Multiply($this->operand1, $this->operand2);
+        }
+
+        return 0;
     }
 
     /**
+     * @param float $operand1
+     * @param float $operand2
+     * @return float
+     */
+    private function Add($operand1, $operand2)
+    {
+        return $this->getAnswer($operand1 + $operand2);
+    }
+
+    /**
+     * @param float $operand1
+     * @param float $operand2
+     * @return float
+     */
+    private function Subtract($operand1, $operand2)
+    {
+        return $this->getAnswer($operand1 - $operand2);
+    }
+
+    /**
+     * @param float $operand1
+     * @param float $operand2
      * @return mixed
      */
-    public function Divide($operand1, $operand2)
+
+    private function Divide($operand1, $operand2)
     {
-        if($this->operand2 == 0)return $this->answer = "It isn't possible to divide by 0";
-        return $this->getAnswer($answer = $operand1 / $operand2);
+        if ($operand2 == 0) {
+            return "It isn't possible to divide by 0";
+        }
+
+        return $this->getAnswer($operand1 / $operand2);
     }
 
     /**
+     * @param float $operand1
+     * @param float $operand2
      * @return float
      */
-    public function Multiply($operand1, $operand2)
+    private function Multiply($operand1, $operand2)
     {
-        return $this->getAnswer($answer = $operand1 * $operand2);
+        return $this->getAnswer($operand1 * $operand2);
     }
 
     /**
@@ -80,7 +108,6 @@ class Calc
      */
     private function getAnswer($answer)
     {
-        $this->answer = round($answer, 3, PHP_ROUND_HALF_UP);
-        //return $answer;
+        return round($answer, 3, PHP_ROUND_HALF_UP);
     }
 }
