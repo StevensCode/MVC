@@ -9,4 +9,3 @@ cal.math.post:
     controller: 'QL\CJarvis\MVC\Controllers\Calc\Post'
     view: 'calculate.twig'
     method: 'POST'
-    

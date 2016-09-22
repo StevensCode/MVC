@@ -14,5 +14,7 @@
                     <input name="operand2" type="float"><br>
                     <input type="submit" value="Calculate">
                     </form>
-                    <div class="answer" name="answer"></div>
+                    {% if (answer) %}
+                    <div class="answer" name="answer">{{ answer }}</div>
+                    {% endif %}
 {% endblock %}
