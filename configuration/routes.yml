@@ -3,3 +3,10 @@ cal.math.get:
     controller: 'QL\CJarvis\MVC\Controllers\Calc\Get'
     view: 'calculate.twig'
     method: 'GET'
+
+cal.math.post:
+    url: '/'
+    controller: 'QL\CJarvis\MVC\Controllers\Calc\Post'
+    view: 'calculate.twig'
+    method: 'POST'
+    

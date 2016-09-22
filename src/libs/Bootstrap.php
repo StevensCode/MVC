@@ -77,18 +77,17 @@ class Bootstrap
         $routesInfo = Yaml::parse(file_get_contents(self::ROOT.'/configuration/routes.yml'));
 
         foreach ($routesInfo as $key => $val) {
-            if (strtolower($val['method']) === 'get') {
-                $controller = $val['controller'];
-                $view = $val['view'];
-                $app->get(
+            $method = strtolower($val['method']);
+            $controller = $val['controller'];
+            $view = $val['view'];
+            $app->$method(
                     $val['url'],
                     function (Request $request, Response $response) use ($controller, $view) {
                         $response = call_user_func(new $controller, $request, $response);
                         $response = $this->view->render($response, $view);
                         return $response;
                     }
-                );
-            }
+            );          
         }
     }
 }
