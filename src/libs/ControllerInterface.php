@@ -8,7 +8,7 @@ namespace QL\CJarvis\MVC\libs;
 
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
-use QL\CJarvis\MVC\libs\Tempate;
+use QL\CJarvis\MVC\libs\Template;
 
 interface ControllerInterface
 {

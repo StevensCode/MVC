@@ -12,7 +12,7 @@ use Slim\App;
 use Slim\Views\Twig;
 use Slim\Views\TwigExtension;
 use Symfony\Component\Yaml\Yaml;
-use QL\CJarvis\MVC\libs\Tempalte;
+use QL\CJarvis\MVC\libs\Template;
 
 class Bootstrap
 {
