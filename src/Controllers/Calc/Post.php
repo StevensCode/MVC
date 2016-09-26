@@ -34,6 +34,9 @@ class Post implements ControllerInterface
 
         $result = $model->calculate();
 
-        return $template->render(['RESULT' => $result]);
+        return $template->render([
+            'ANSWER' => 'Answer: ',
+            'RESULT' => $result
+            ]);
     }
 }
