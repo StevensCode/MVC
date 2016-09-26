@@ -41,7 +41,6 @@ class Calc
      * @param null
      * @return string $result
      */
-     
     public function calculate()
     {
         switch ($this->operator) {
