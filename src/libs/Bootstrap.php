@@ -12,6 +12,7 @@ use Slim\App;
 use Slim\Views\Twig;
 use Slim\Views\TwigExtension;
 use Symfony\Component\Yaml\Yaml;
+use QL\CJarvis\MVC\libs\Template;
 
 class Bootstrap
 {
@@ -83,9 +84,15 @@ class Bootstrap
             $view = $val['view'];
             $app->$method(
                 $val['url'],
-                function (ServerRequestInterface $request, ResponseInterface $response) use ($controller, $view) {
-                    $result = call_user_func(new $controller, $request, $response);
-                    return $this->view->render($response, $view, $result);
+                function (
+                    ServerRequestInterface $request,
+                    ResponseInterface $response
+                ) use (
+                    $controller,
+                    $view
+                ) {
+                    $template = new Template($this->view, $view, $response);
+                    return call_user_func(new $controller, $request, $response, $template);
                 }
             );
         }

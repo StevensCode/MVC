@@ -10,6 +10,7 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use QL\CJarvis\MVC\libs\ControllerInterface;
 use QL\CJarvis\MVC\models\Calc;
+use QL\CJarvis\MVC\libs\Template;
 
 class Post implements ControllerInterface
 {
@@ -18,8 +19,11 @@ class Post implements ControllerInterface
      * @param ResponseInterface $response
      * @return array
      */
-    public function __invoke(ServerRequestInterface $request, ResponseInterface $response)
-    {
+    public function __invoke(
+        ServerRequestInterface $request,
+        ResponseInterface $response,
+        Template $template
+    ) {
         $parseBody = $request->getParsedBody();
 
         $model = new Calc(
@@ -29,7 +33,7 @@ class Post implements ControllerInterface
         );
 
         $result = $model->calculate();
-        // for now, eventually data will bind to document object, next version
-        return ['RESULT' => $result];
+
+        return $template->render(['RESULT' => $result]);
     }
 }
