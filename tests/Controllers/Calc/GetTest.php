@@ -13,11 +13,15 @@ class GetTest extends \PHPUnit_Framework_TestCase
     public function testGetPageIsInvoked()
     {
         $get = new Get();
+
         $request = Mockery::mock('Psr\Http\Message\ServerRequestInterface');
         $response = Mockery::mock('Psr\Http\Message\ResponseInterface');
-        
-        $result = $get($request, $response);
+        $template = Mockery::mock('QL\CJarvis\MVC\libs\Template');
 
-        $this->assertEquals(sizeof($result), 0);
+        $template->shouldReceive('render')->once()->andReturn($template);
+        
+        $result = $get($request, $response, $template);
+
+        $this->assertEquals(sizeof($result), 1);
     }
 }
