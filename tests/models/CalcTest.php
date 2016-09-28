@@ -12,6 +12,6 @@ class CalcTest extends \PHPUnit_Framework_TestCase
 {
     public function testCalc()
     {
-        //unsure how to test this
+        $this->markTestIncomplete();
     }
 }

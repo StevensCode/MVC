@@ -12,6 +12,6 @@ class ControllerInterfaceTest extends \PHPUnit_Framework_TestCase
 {
     public function testControllerInterface()
     {
-        //unsure how to test this
+        $this->markTestIncomplete();
     }
 }

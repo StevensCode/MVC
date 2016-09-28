@@ -4,13 +4,13 @@
 * Project to learn and study Model View Controller
 * in PHP with Slim Framework
 */
-namespace QL\CJarvis\MVC\Controllers\Calc;
+namespace QL\CJarvis\MVC\libs;
 
-use Mockery;
+use QL\CJarvis\MVC\libs\Template;
 
-class PostTest extends \PHPUnit_Framework_TestCase
+class TemplateTest extends \PHPUnit_Framework_TestCase
 {
-    public function testPostPageIsInvoked()
+    public function testTemplate()
     {
         $this->markTestIncomplete();
     }

@@ -12,6 +12,6 @@ class BootstrapTest extends \PHPUnit_Framework_TestCase
 {
     public function testBootstrap()
     {
-        //unsure how to test this
+        $this->markTestIncomplete();
     }
 }
