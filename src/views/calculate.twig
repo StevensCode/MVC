@@ -4,7 +4,7 @@
 
 {% block body %}
     <form method="post" action="">
-        <input name="operand1" type="float" value="{{ RESULT }}">
+        <input name="operand1" type="float" value="{% if RESULT == "Sorry, can't divide by '0'" %}0{% else %}{{ RESULT }}{% endif %}">
         <select name="operator" size="4">
             <option value="+" selected="selected">+</option>
             <option value="-">-</option>

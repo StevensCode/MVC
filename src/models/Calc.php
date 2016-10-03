@@ -6,8 +6,6 @@
 */
 namespace QL\CJarvis\MVC\models;
 
-use QL\CJarvis\MVC\controllers\Post;
-
 class Calc
 {
     /**
@@ -29,29 +27,25 @@ class Calc
      * @param float $operand1
      * @param float $operand2
      * @param string $operator
+     * @return float $result
      */
-    public function __construct($operand1, $operand2, $operator)
+    public function calculate($operand1, $operand2, $operator)
     {
-        $this->operand1 = $operand1;
-        $this->operand2 = $operand2;
-        $this->operator = $operator;
-    }
-
-    /**
-     * @param null
-     * @return string $result
-     */
-    public function calculate()
-    {
-        switch ($this->operator) {
+        switch (true) {
+            case ($operator == '/' && $operand2 == 0):
+                $noZeros = "Sorry, can't divide by '0'";
+                return $noZeros;
+                break;
+        }
+        switch ($operator) {
             case '+':
-                return $this->getAnswer($this->operand1 + $this->operand2);
+                return $this->getAnswer($operand1 + $operand2);
             case '-':
-                return $this->getAnswer($this->operand1 - $this->operand2);
+                return $this->getAnswer($operand1 - $operand2);
             case '/':
-                return $this->getAnswer($this->operand1 / $this->operand2);
+                return $this->getAnswer($operand1 / $operand2);
             case '*':
-                return $this->getAnswer($this->operand1 * $this->operand2);
+                return $this->getAnswer($operand1 * $operand2);
         }
 
         return 0;
@@ -59,7 +53,7 @@ class Calc
 
     /**
      * @param $answer
-     * @return mixed
+     * @return float
      */
     private function getAnswer($answer)
     {

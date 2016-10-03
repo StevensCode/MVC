@@ -18,10 +18,11 @@ class GetTest extends \PHPUnit_Framework_TestCase
         $response = Mockery::mock('Psr\Http\Message\ResponseInterface');
         $template = Mockery::mock('QL\CJarvis\MVC\libs\Template');
 
-        $template->shouldReceive('render')->once()->andReturn($template);
+        $template->shouldReceive('render')->andReturnUsing(
+            function($arg){
+                $this->assertEquals(sizeof($arg), 0);
+            });
         
         $result = $get($request, $response, $template);
-
-        $this->assertEquals(sizeof($result), 1);
     }
 }

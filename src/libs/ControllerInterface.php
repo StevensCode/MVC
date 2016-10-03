@@ -12,6 +12,12 @@ use QL\CJarvis\MVC\libs\Template;
 
 interface ControllerInterface
 {
+    /**
+     * @param ServerRequestInterface $request
+     * @param ResponseInterface $response
+     * @param Template $template
+     * @return ResponseInterface
+     */
     public function __invoke(
         ServerRequestInterface $request,
         ResponseInterface $response,

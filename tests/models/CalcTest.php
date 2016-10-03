@@ -6,12 +6,12 @@
 */
 namespace QL\CJarvis\MVC\models;
 
-use QL\CJarvis\MVC\models\Calc;
-
 class CalcTest extends \PHPUnit_Framework_TestCase
 {
-    public function testCalc()
+    public function testCalcDoesTheMath()
     {
-        $this->markTestIncomplete();
+        $calc = new Calc();
+
+        $this->assertEquals($calc->calculate(1,2,'+'), 3.0);
     }
 }

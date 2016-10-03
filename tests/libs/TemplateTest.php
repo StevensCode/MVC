@@ -6,7 +6,7 @@
 */
 namespace QL\CJarvis\MVC\libs;
 
-use QL\CJarvis\MVC\libs\Template;
+use Mockery;
 
 class TemplateTest extends \PHPUnit_Framework_TestCase
 {

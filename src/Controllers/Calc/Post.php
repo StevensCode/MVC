@@ -26,13 +26,13 @@ class Post implements ControllerInterface
     ) {
         $parseBody = $request->getParsedBody();
 
-        $model = new Calc(
+        $model = new Calc();
+
+        $result = $model->calculate(
             $parseBody['operand1'],
             $parseBody['operand2'],
             $parseBody['operator']
-        );
-
-        $result = $model->calculate();
+            );
 
         return $template->render([
             'ANSWER' => 'Answer: ',

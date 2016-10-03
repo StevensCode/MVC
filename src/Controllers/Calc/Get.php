@@ -24,6 +24,7 @@ class Get implements ControllerInterface
         ResponseInterface $response,
         Template $template
     ) {
+      
         return $template->render([]);
     }
 }
