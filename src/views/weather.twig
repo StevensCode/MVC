@@ -1,0 +1,15 @@
+{% extends "index.twig" %}
+
+{% block title %}Weather App{% endblock %}
+
+{% block body %}
+<h1>MVC - Weather App</h1>
+    <div class="weather">Current temperature in: 
+        <div class="location">{{ CITY }}, {{ STATE }}
+        </div>
+        <div>is:
+            <div class="temperature">{{ DEGREE_F }}&deg;
+            </div>
+        </div>
+    </div>
+{% endblock %}

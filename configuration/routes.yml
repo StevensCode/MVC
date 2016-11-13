@@ -1,11 +1,17 @@
 cal.math.get:
-    url: '/'
+    url: '/calculate'
     controller: 'QL\CJarvis\MVC\Controllers\Calc\Get'
     view: 'calculate.twig'
     method: 'GET'
 
 cal.math.post:
-    url: '/'
+    url: '/calculate'
     controller: 'QL\CJarvis\MVC\Controllers\Calc\Post'
     view: 'calculate.twig'
     method: 'POST'
+
+wea.api.get:
+    url: '/weather'
+    controller: 'QL\CJarvis\MVC\Controllers\Weather\Get'
+    view: 'weather.twig'
+    method: 'GET'

@@ -12,6 +12,6 @@ class TemplateTest extends \PHPUnit_Framework_TestCase
 {
     public function testTemplate()
     {
-        $this->markTestIncomplete();
+        $this->markTestIncomplete('This test still needs to be created');
     }
 }
