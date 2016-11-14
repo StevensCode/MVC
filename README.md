@@ -15,6 +15,7 @@
  1. navigate to MVC.app/calculate for calculator and MVC.app/weather for the weather
 
 ## Overview:
+## MVC Calculator
 * MVC Calculator is a Calculator application that lets people manipulate numbers using these operators:
  - add
  - subtract
@@ -30,7 +31,7 @@ This version will not support advanced features:
  - using '(' or ')' for order of operations
  - manipulating more than two numbers at a time
 
-
+## MVC Weather App
 * MVC Weather is an application that will tell you the current Temperature in F for Detroit, MI
  - That's it!
 
