@@ -31,6 +31,8 @@ class Get implements ControllerInterface
 
         $weather = $model->weatherMan();
 
+        //mail('chris.jarvs@gmail.com', 'test', 'test bruh');
+
         return $template->render([
             'CITY' => $weather['city'],
             'STATE' => $weather['state'],

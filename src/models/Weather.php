@@ -15,10 +15,12 @@ class Weather
     {
         $json_string = file_get_contents("http://api.wunderground.com/api/4dd8685754031ba8/geolookup/conditions/q/MI/Detroit.json");
         $parsed_json = json_decode($json_string);
-        
-        $weatherInfo['city'] = $parsed_json->{'location'}->{'city'};
-        $weatherInfo['state'] = $parsed_json->{'location'}->{'state'};
-        $weatherInfo['temp_f'] = $parsed_json->{'current_observation'}->{'temp_f'};
+
+        $weatherInfo = [
+            'city' => $parsed_json->{'location'}->{'city'},
+            'state' => $parsed_json->{'location'}->{'state'},
+            'temp_f' => $parsed_json->{'current_observation'}->{'temp_f'}
+            ];
 
         return $weatherInfo;
     }
