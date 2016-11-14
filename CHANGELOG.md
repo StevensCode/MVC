@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 14-11-2016
+
+* Added Vagrant support to allow for easier testing and use of app
+* Added Weather app that hits weather.com API to provide weather of Detroit, MI
+* Changed css file colors and margin
+
 ## 22-09-2016
 
 * Made all files that use `Psr\Http\Message\ServerRequestInterface` and `ResponseInterface` more DRY

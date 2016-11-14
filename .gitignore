@@ -1,8 +1,4 @@
-#ignore unnecessary directories
-/vendor/
-
-#ignore hidden files
+/vendor
+/.vagrant
+composer.lock
 .DS_Store
-
-#other files
-composer.phar

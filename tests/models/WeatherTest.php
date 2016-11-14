@@ -1,6 +1,6 @@
 <?php
 /**
-* Weather using MVC.
+* Weather App using MVC.
 * Project to learn and study Model View Controller
 * in PHP with Slim Framework
 */
@@ -21,6 +21,18 @@ class WeatherTest extends \PHPUnit_Framework_TestCase
 
     public function testWeatherManHasJsonResults()
     {
-        $this->assertTrue();
+        $jsonTest = new weather();
+        
+        $json = $jsonTest->weatherMan();
+
+        $temperature = $json['temp_f'];
+
+        $fixture = [
+            'city' => 'Detroit',
+            'state' => 'MI',
+            'temp_f' => $temperature
+            ];
+        
+        $this->assertEquals($fixture, $json);
     }
 }
