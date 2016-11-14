@@ -14,7 +14,7 @@
  1. while in MVC folder, enter command vagrant up
  1. navigate to MVC.app/calculate for calculator and MVC.app/weather for the weather
 
-## Overview:
+# Overview:
 ## MVC Calculator
 * MVC Calculator is a Calculator application that lets people manipulate numbers using these operators:
  - add
