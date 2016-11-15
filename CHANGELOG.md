@@ -2,6 +2,11 @@
 
 ## 14-11-2016
 
+* Updated Weather App to allow user to enter city and state 
+* Added POST file to help with form submission
+
+## 14-11-2016
+
 * Added Vagrant support to allow for easier testing and use of app
 * Added Weather app that hits weather.com API to provide weather of Detroit, MI
 * Changed css file colors and margin

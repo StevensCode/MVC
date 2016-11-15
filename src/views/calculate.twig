@@ -5,14 +5,14 @@
 {% block body %}
 <h1>MVC - Calculator</h1>
     <form method="post" action="">
-        <input name="operand1" type="float" maxlength="7" value="{% if RESULT == "Sorry, can't divide by '0'" %}0{% else %}{{ RESULT }}{% endif %}">
+        <input name="operand1" type="number" maxlength="7" value="{% if RESULT == "Sorry, can't divide by '0'" %}0{% else %}{{ RESULT }}{% endif %}">
         <select name="operator" size="4">
             <option value="+" selected="selected">+</option>
             <option value="-">-</option>
             <option value="/">/</option>
             <option value="*">*</option>
         </select>
-        <input name="operand2" type="float" maxlength="7"><br>
+        <input name="operand2" type="number" maxlength="7"><br>
         <input type="submit" value="Calculate">
     </form>
     <div class="answer" name="answer">{{ ANSWER }}{{ RESULT }}</div>

@@ -1,16 +1,16 @@
 <?php
 /**
-* Calculator using MVC.
+* Weather App using MVC.
 * Project to learn and study Model View Controller
 * in PHP with Slim Framework
 */
-namespace QL\CJarvis\MVC\Controllers\Calc;
+namespace QL\CJarvis\MVC\Controllers\Weather;
 
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use QL\CJarvis\MVC\libs\ControllerInterface;
 use QL\CJarvis\MVC\libs\Template;
-use QL\CJarvis\MVC\models\Calc;
+use QL\CJarvis\MVC\models\Weather;
 
 class Post implements ControllerInterface
 {
@@ -26,17 +26,18 @@ class Post implements ControllerInterface
     ) {
         $parseBody = $request->getParsedBody();
 
-        $model = new Calc();
+        $model = new Weather();
 
-        $result = $model->calculate(
-            $parseBody['operand1'],
-            $parseBody['operand2'],
-            $parseBody['operator']
+        $result = $model->weatherMan(
+            $parseBody['city'],
+            $parseBody['state']
             );
 
         return $template->render([
-            'ANSWER' => 'Answer: ',
-            'RESULT' => $result
-            ]);
+            'CITY' => $parseBody['city'],
+            'STATE' => $parseBody['state'],
+            'DEGREE_F' => $result['temp_f'],
+            'GIF' => $result['gif']
+        ]);
     }
 }

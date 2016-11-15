@@ -15,3 +15,10 @@ wea.api.get:
     controller: 'QL\CJarvis\MVC\Controllers\Weather\Get'
     view: 'weather.twig'
     method: 'GET'
+
+wea.api.post:
+    url: '/weather'
+    controller: 'QL\CJarvis\MVC\Controllers\Weather\Post'
+    view: 'weather.twig'
+    method: 'POST'
+    

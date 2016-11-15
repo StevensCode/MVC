@@ -4,6 +4,7 @@
 
 {% block body %}
 <h1>MVC - Weather App</h1>
+    {% if CITY %}
     <div class="weather">Current temperature in: 
         <div class="location">{{ CITY }}, {{ STATE }}
         </div>
@@ -11,5 +12,14 @@
             <div class="temperature">{{ DEGREE_F }}&deg;
             </div>
         </div>
+        <div><img class="img-weather" src="{{ GIF }}" />
+        </div>
     </div>
+    {% endif %}
+
+    <form method="post" action="">
+        <input class="city" name="city" placeholder="city">
+        <input class="state" name="state" placeholder="state"><br>
+        <input type="submit" value="Get Temperature">
+    </form>
 {% endblock %}
