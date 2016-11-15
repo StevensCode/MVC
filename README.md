@@ -32,11 +32,11 @@ This version will not support advanced features:
  - manipulating more than two numbers at a time
 
 ## MVC Weather App
-* MVC Weather is an application that will tell you the current Temperature in F for Detroit, MI
+* MVC Weather is an application that will tell you the current Temperature in F for whichever city entered!
  - That's it!
 
 ## Scenario:
-Want to know the weather in Detroit, MI? Navigate to MVC.app/weather and take a look!
+Want to know the temperature for a specified city and state? Navigate to MVC.app/weather, enter city and state, and take a look!
 
 ## Non Goals:
 This version will not support advanced features:
