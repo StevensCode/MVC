@@ -5,7 +5,6 @@
 * in PHP with Slim Framework
 */
 
-
 use QL\CJarvis\MVC\libs\Bootstrap;
 
 require_once __DIR__.'/../vendor/autoload.php';
